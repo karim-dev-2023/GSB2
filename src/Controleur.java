@@ -7,15 +7,15 @@ public class Controleur implements  ActionListener{
 	private V_connexion v_connexion;
 	private V_accueil v_accueil;
 	
-	 private static final String Action_connexion = "CONNEXION";
-	 private static final String Action_accueil = "ACCUEIL";
+//	Création d'un attribut static 
+	private static final String Action_connexion = "CONNEXION";
 	
 	public Controleur() {
+		
 		this.v_principal = new V_principale();
 		this.v_connexion = new V_connexion();
 		
-		
-		
+		// Définir la commande d'action pour le bouton
         v_connexion.getButtonConnexion().setActionCommand(Action_connexion);
         v_connexion.getButtonConnexion().addActionListener(this);
 
@@ -29,6 +29,7 @@ public class Controleur implements  ActionListener{
 		String actionCommand = action.getActionCommand();
 		
 		switch (actionCommand) {
+		
         case Action_connexion:
         	this.v_accueil = new V_accueil();
         	this.v_principal.getMainPanel().removeAll();
@@ -37,5 +38,6 @@ public class Controleur implements  ActionListener{
     		this.v_principal.getMainPanel().repaint();
             break;
 		}
+		
 	}
 }

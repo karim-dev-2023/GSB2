@@ -1,10 +1,41 @@
+import java.awt.event.*;
 
-public class Controleur {
+public class Controleur implements  ActionListener{
 
 //	Les Attributs 
-	private V_principal v_principal;
+	private V_principale v_principal;
+	private V_connexion v_connexion;
+	private V_accueil v_accueil;
+	
+	 private static final String Action_connexion = "CONNEXION";
+	 private static final String Action_accueil = "ACCUEIL";
 	
 	public Controleur() {
-		this.v_principal = new V_principal();
+		this.v_principal = new V_principale();
+		this.v_connexion = new V_connexion();
+		
+		
+		
+        v_connexion.getButtonConnexion().setActionCommand(Action_connexion);
+        v_connexion.getButtonConnexion().addActionListener(this);
+
+		
+		this.v_principal.getMainPanel().add(this.v_connexion.getConnexionPanel());
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent action) {
+		
+		String actionCommand = action.getActionCommand();
+		
+		switch (actionCommand) {
+        case Action_connexion:
+        	this.v_accueil = new V_accueil();
+        	this.v_principal.getMainPanel().removeAll();
+    		this.v_principal.getMainPanel().add(this.v_accueil.getAccueilPanel());
+    		this.v_principal.getMainPanel().revalidate();
+    		this.v_principal.getMainPanel().repaint();
+            break;
+		}
 	}
 }

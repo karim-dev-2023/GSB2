@@ -14,31 +14,31 @@ public class V_principale extends JFrame{
     	this.setTitle("SIO +");
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1000, 500);
+        this.setSize(500, 500);
         
-        // Instanciation des éléments
+        // Instanciation des ï¿½lï¿½ments
         mainPanel = new JPanel();
         
        
-        // Connexion à la base de données et affichage du résultat dans un JLabel
+        // Connexion ï¿½ la base de donnï¿½es et affichage du rï¿½sultat dans un JLabel
         //connexionBDD = new JLabel(Modele.connexionBDD());
         V_connexion connexionPanel = new V_connexion();
        
         // Changement de Couleur du Fond
-        mainPanel.setBackground(Color.magenta);
+        mainPanel.setBackground(Color.ORANGE);
         
-        // Ajout du JLabel à notre JPanel
+        // Ajout du JLabel ï¿½ notre JPanel
         //connexionPanelmainPanel.add(connexionBDD);
 
         
-        // Ajout du JPanel à la fenêtre principale
+        // Ajout du JPanel ï¿½ la fenï¿½tre principale
         getContentPane().add(mainPanel);
         
-        // Affichage de la fenêtre
+        // Affichage de la fenï¿½tre
         this.setVisible(true);
     }
 
-    // Méthode pour obtenir le JPanel principal
+    // Mï¿½thode pour obtenir le JPanel principal
     public JPanel getMainPanel() {
         return mainPanel;
     }
